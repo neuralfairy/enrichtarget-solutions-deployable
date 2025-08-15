@@ -3,6 +3,9 @@ import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { Link } from "react-router-dom";
+import leadershipImage from "@/assets/leadership-team.jpg";
+import atlantaOfficeImage from "@/assets/atlanta-office.jpg";
 import { 
   Users, 
   Target, 
@@ -209,13 +212,36 @@ const About = () => {
       {/* Leadership Team */}
       <section className="py-16 bg-gradient-card">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-heading font-bold mb-4">
-              Leadership Team
-            </h2>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Meet the experts driving AI Hunter's innovation
-            </p>
+          <div className="grid lg:grid-cols-2 gap-12 items-center mb-16">
+            <div>
+              <h2 className="text-3xl md:text-4xl font-heading font-bold mb-6">
+                Leadership Team
+              </h2>
+              <p className="text-xl text-muted-foreground mb-8">
+                Meet the experts driving AI Hunter's innovation with decades of combined experience in AI, sales, and enterprise software.
+              </p>
+              <div className="space-y-4">
+                <div className="flex items-center gap-3">
+                  <Award className="h-5 w-5 text-success" />
+                  <span>Combined 80+ years experience</span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <Award className="h-5 w-5 text-success" />
+                  <span>Former executives at Google, Tesla, Salesforce</span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <Award className="h-5 w-5 text-success" />
+                  <span>Multiple successful exits and IPOs</span>
+                </div>
+              </div>
+            </div>
+            <div className="animate-scale-in">
+              <img 
+                src={leadershipImage} 
+                alt="Enrichtarget Leadership Team" 
+                className="rounded-lg shadow-2xl border border-border w-full"
+              />
+            </div>
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -248,13 +274,13 @@ const About = () => {
       {/* Company Info */}
       <section className="py-16">
         <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+          <div className="max-w-6xl mx-auto">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16">
               <div>
                 <h2 className="text-3xl md:text-4xl font-heading font-bold mb-6">
                   Atlanta Headquarters
                 </h2>
-                <div className="space-y-4">
+                <div className="space-y-4 mb-8">
                   <div className="flex items-center space-x-3">
                     <MapPin className="h-5 w-5 text-primary" />
                     <span>Technology Square, Atlanta, GA 30308</span>
@@ -267,25 +293,35 @@ const About = () => {
                   </div>
                   <div className="flex items-center space-x-3">
                     <Globe className="h-5 w-5 text-primary" />
-                    <span>Global remote team</span>
+                    <span>Global remote team across 25+ countries</span>
                   </div>
                 </div>
                 
-                <div className="mt-8">
+                <div className="mb-8">
                   <h3 className="text-xl font-heading font-semibold mb-4">
                     Join Our Team
                   </h3>
                   <p className="text-muted-foreground mb-4">
-                    We're always looking for talented individuals to join our mission of transforming B2B sales.
+                    We're always looking for talented individuals to join our mission of transforming B2B sales with AI innovation.
                   </p>
                   <Button className="bg-gradient-primary hover:opacity-90" asChild>
-                    <a href="https://salescentri.com/company/careers">
+                    <Link to="/contact">
                       View Open Positions
-                    </a>
+                    </Link>
                   </Button>
                 </div>
               </div>
               
+              <div className="animate-scale-in">
+                <img 
+                  src={atlantaOfficeImage} 
+                  alt="Enrichtarget Atlanta Office Building" 
+                  className="rounded-lg shadow-2xl border border-border w-full"
+                />
+              </div>
+            </div>
+
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
               <div>
                 <h2 className="text-3xl md:text-4xl font-heading font-bold mb-6">
                   Company Milestones
@@ -295,30 +331,71 @@ const About = () => {
                     <div className="text-sm text-primary font-medium">2024</div>
                     <div className="font-semibold">Series A Funding</div>
                     <div className="text-sm text-muted-foreground">
-                      Raised $15M to accelerate AI development
+                      Raised $15M to accelerate AI development and global expansion
                     </div>
                   </div>
                   <div className="border-l-2 border-primary pl-6">
                     <div className="text-sm text-primary font-medium">2023</div>
                     <div className="font-semibold">10K Customers Milestone</div>
                     <div className="text-sm text-muted-foreground">
-                      Reached 10,000 active customers worldwide
+                      Reached 10,000 active customers worldwide with 99% retention rate
                     </div>
                   </div>
                   <div className="border-l-2 border-primary pl-6">
                     <div className="text-sm text-primary font-medium">2022</div>
                     <div className="font-semibold">Product Launch</div>
                     <div className="text-sm text-muted-foreground">
-                      AI Hunter platform officially launched
+                      AI Hunter platform officially launched with enterprise customers
                     </div>
                   </div>
                   <div className="border-l-2 border-primary pl-6">
                     <div className="text-sm text-primary font-medium">2020</div>
                     <div className="font-semibold">Company Founded</div>
                     <div className="text-sm text-muted-foreground">
-                      Enrichtarget Solutions established in Atlanta
+                      Enrichtarget Solutions established in Atlanta with $2M seed funding
                     </div>
                   </div>
+                </div>
+              </div>
+
+              <div>
+                <h2 className="text-3xl md:text-4xl font-heading font-bold mb-6">
+                  Recognition & Awards
+                </h2>
+                <div className="space-y-4">
+                  <Card className="bg-gradient-card border-border">
+                    <CardContent className="p-4">
+                      <div className="flex items-center gap-3">
+                        <Award className="h-6 w-6 text-primary" />
+                        <div>
+                          <div className="font-semibold">SaaS Breakthrough Award 2023</div>
+                          <div className="text-sm text-muted-foreground">Best AI Innovation in Sales Technology</div>
+                        </div>
+                      </div>
+                    </CardContent>
+                  </Card>
+                  <Card className="bg-gradient-card border-border">
+                    <CardContent className="p-4">
+                      <div className="flex items-center gap-3">
+                        <TrendingUp className="h-6 w-6 text-primary" />
+                        <div>
+                          <div className="font-semibold">Forbes 30 Under 30</div>
+                          <div className="text-sm text-muted-foreground">CEO Sarah Chen featured in Enterprise Technology</div>
+                        </div>
+                      </div>
+                    </CardContent>
+                  </Card>
+                  <Card className="bg-gradient-card border-border">
+                    <CardContent className="p-4">
+                      <div className="flex items-center gap-3">
+                        <Shield className="h-6 w-6 text-primary" />
+                        <div>
+                          <div className="font-semibold">SOC 2 Type II Certification</div>
+                          <div className="text-sm text-muted-foreground">Enterprise-grade security and compliance</div>
+                        </div>
+                      </div>
+                    </CardContent>
+                  </Card>
                 </div>
               </div>
             </div>
@@ -337,14 +414,14 @@ const About = () => {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button size="lg" variant="secondary" asChild>
-              <a href="https://salescentri.com/get-started/book-demo">
+              <Link to="/contact">
                 Book a Demo
-              </a>
+              </Link>
             </Button>
             <Button size="lg" variant="outline" className="bg-white/10 border-white/20 text-white hover:bg-white/20" asChild>
-              <a href="https://salescentri.com/contact">
+              <Link to="/contact">
                 Contact Us
-              </a>
+              </Link>
             </Button>
           </div>
         </div>

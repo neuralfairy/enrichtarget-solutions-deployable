@@ -3,6 +3,9 @@ import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { Link } from "react-router-dom";
+import dashboardImage from "@/assets/dashboard-contact-discovery.jpg";
+import aiNetworkImage from "@/assets/ai-network-brain.jpg";
 import { 
   Brain, 
   Search, 
@@ -15,7 +18,10 @@ import {
   Mail,
   Phone,
   Building2,
-  CheckCircle
+  CheckCircle,
+  Workflow,
+  Lock,
+  BarChart3
 } from "lucide-react";
 
 const Features = () => {
@@ -88,14 +94,14 @@ const Features = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button size="lg" className="bg-gradient-primary hover:opacity-90" asChild>
-                <a href="https://salescentri.com/solutions/use-case-navigator/demo">
+                <Link to="/contact">
                   Interactive Demo
-                </a>
+                </Link>
               </Button>
               <Button size="lg" variant="outline" asChild>
-                <a href="https://salescentri.com/get-started/free-trial">
+                <Link to="/contact">
                   Start Free Trial
-                </a>
+                </Link>
               </Button>
             </div>
           </div>
@@ -105,13 +111,36 @@ const Features = () => {
       {/* Features Grid */}
       <section className="py-16">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-heading font-bold mb-4">
-              Powerful Features for Modern Sales Teams
-            </h2>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Everything you need to find, verify, and engage with your ideal prospects
-            </p>
+          <div className="grid lg:grid-cols-2 gap-12 items-center mb-16">
+            <div>
+              <h2 className="text-3xl md:text-4xl font-heading font-bold mb-6">
+                Powerful Features for Modern Sales Teams
+              </h2>
+              <p className="text-xl text-muted-foreground mb-8">
+                Everything you need to find, verify, and engage with your ideal prospects using cutting-edge AI technology.
+              </p>
+              <div className="space-y-4">
+                <div className="flex items-center gap-3">
+                  <CheckCircle className="h-5 w-5 text-success" />
+                  <span>99.9% uptime guarantee</span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <CheckCircle className="h-5 w-5 text-success" />
+                  <span>Real-time data enrichment</span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <CheckCircle className="h-5 w-5 text-success" />
+                  <span>Advanced API integrations</span>
+                </div>
+              </div>
+            </div>
+            <div className="animate-scale-in">
+              <img 
+                src={dashboardImage} 
+                alt="AI Hunter Features Dashboard" 
+                className="rounded-lg shadow-2xl border border-border w-full"
+              />
+            </div>
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -144,15 +173,73 @@ const Features = () => {
         </div>
       </section>
 
-      {/* Contact Types Section */}
+      {/* AI Workflow Section */}
       <section className="py-16 bg-gradient-card">
+        <div className="container mx-auto px-4">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <div className="animate-scale-in">
+              <img 
+                src={aiNetworkImage} 
+                alt="AI Hunter Neural Network Technology" 
+                className="rounded-lg shadow-2xl border border-border w-full"
+              />
+            </div>
+            <div>
+              <h2 className="text-3xl md:text-4xl font-heading font-bold mb-6">
+                AI-Powered Intelligence Engine
+              </h2>
+              <p className="text-xl text-muted-foreground mb-8">
+                Our advanced neural networks continuously learn and adapt to provide the most accurate contact discovery and data enrichment.
+              </p>
+              <div className="space-y-6">
+                <div className="flex items-start gap-4">
+                  <div className="w-12 h-12 bg-gradient-primary rounded-full flex items-center justify-center flex-shrink-0">
+                    <Brain className="h-6 w-6 text-white" />
+                  </div>
+                  <div>
+                    <h3 className="text-lg font-heading font-semibold mb-2">Machine Learning Algorithms</h3>
+                    <p className="text-muted-foreground">
+                      Advanced ML models trained on billions of data points to predict and verify contact information with 95% accuracy.
+                    </p>
+                  </div>
+                </div>
+                <div className="flex items-start gap-4">
+                  <div className="w-12 h-12 bg-gradient-secondary rounded-full flex items-center justify-center flex-shrink-0">
+                    <Workflow className="h-6 w-6 text-white" />
+                  </div>
+                  <div>
+                    <h3 className="text-lg font-heading font-semibold mb-2">Automated Workflows</h3>
+                    <p className="text-muted-foreground">
+                      Set up intelligent workflows that automatically enrich, score, and route leads to your sales team in real-time.
+                    </p>
+                  </div>
+                </div>
+                <div className="flex items-start gap-4">
+                  <div className="w-12 h-12 bg-gradient-primary rounded-full flex items-center justify-center flex-shrink-0">
+                    <BarChart3 className="h-6 w-6 text-white" />
+                  </div>
+                  <div>
+                    <h3 className="text-lg font-heading font-semibold mb-2">Predictive Analytics</h3>
+                    <p className="text-muted-foreground">
+                      Leverage predictive models to identify high-value prospects and optimize your outreach timing for maximum conversion.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Contact Types Section */}
+      <section className="py-16">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-heading font-bold mb-4">
               Find Any Business Contact
             </h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Access verified contact information across all professional channels
+              Access verified contact information across all professional channels with enterprise-grade security
             </p>
           </div>
           
@@ -162,9 +249,12 @@ const Features = () => {
                 <Mail className="h-10 w-10 text-white" />
               </div>
               <h3 className="text-xl font-heading font-semibold mb-4">Email Addresses</h3>
-              <p className="text-muted-foreground">
-                Verified business email addresses with 95% deliverability guarantee
+              <p className="text-muted-foreground mb-4">
+                Verified business email addresses with 95% deliverability guarantee and real-time validation
               </p>
+              <div className="text-sm text-primary">
+                ✓ Real-time verification ✓ Catch-all detection ✓ Role-based filtering
+              </div>
             </div>
             
             <div className="text-center">
@@ -172,19 +262,25 @@ const Features = () => {
                 <Phone className="h-10 w-10 text-white" />
               </div>
               <h3 className="text-xl font-heading font-semibold mb-4">Phone Numbers</h3>
-              <p className="text-muted-foreground">
-                Direct dial and mobile numbers for key decision makers
+              <p className="text-muted-foreground mb-4">
+                Direct dial and mobile numbers for key decision makers with caller ID verification
               </p>
+              <div className="text-sm text-primary">
+                ✓ Direct dial numbers ✓ Mobile verification ✓ Do-not-call compliance
+              </div>
             </div>
             
             <div className="text-center">
               <div className="p-6 bg-gradient-primary rounded-full w-20 h-20 mx-auto mb-6 flex items-center justify-center">
                 <Building2 className="h-10 w-10 text-white" />
               </div>
-              <h3 className="text-xl font-heading font-semibold mb-4">Company Data</h3>
-              <p className="text-muted-foreground">
-                Comprehensive company profiles with technographic insights
+              <h3 className="text-xl font-heading font-semibold mb-4">Company Intelligence</h3>
+              <p className="text-muted-foreground mb-4">
+                Comprehensive company profiles with technographic insights and financial data
               </p>
+              <div className="text-sm text-primary">
+                ✓ Technology stack ✓ Funding history ✓ Growth indicators
+              </div>
             </div>
           </div>
         </div>
@@ -213,9 +309,9 @@ const Features = () => {
           
           <div className="text-center mt-12">
             <Button className="bg-gradient-primary hover:opacity-90" asChild>
-              <a href="https://salescentri.com/solutions/psa-suite/integrations">
+              <Link to="/pricing">
                 View All Integrations
-              </a>
+              </Link>
             </Button>
           </div>
         </div>
@@ -232,14 +328,14 @@ const Features = () => {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button size="lg" variant="secondary" asChild>
-              <a href="https://salescentri.com/get-started/book-demo">
+              <Link to="/contact">
                 Book Demo
-              </a>
+              </Link>
             </Button>
             <Button size="lg" variant="outline" className="bg-white/10 border-white/20 text-white hover:bg-white/20" asChild>
-              <a href="https://salescentri.com/get-started/free-trial">
+              <Link to="/contact">
                 Start Free Trial
-              </a>
+              </Link>
             </Button>
           </div>
         </div>

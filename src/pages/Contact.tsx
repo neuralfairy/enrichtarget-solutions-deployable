@@ -5,6 +5,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Badge } from "@/components/ui/badge";
+import { Link } from "react-router-dom";
 import { 
   Mail, 
   Phone, 
@@ -24,7 +25,7 @@ const Contact = () => {
       title: "Book a Demo",
       description: "Schedule a personalized demo with our sales team",
       action: "Schedule Now",
-      link: "https://salescentri.com/get-started/book-demo",
+      link: "/contact",
       color: "bg-gradient-primary"
     },
     {
@@ -32,7 +33,7 @@ const Contact = () => {
       title: "Live Chat",
       description: "Chat with our support team for immediate assistance",
       action: "Start Chat",
-      link: "https://salescentri.com/contact/support-request/live-chat",
+      link: "/contact",
       color: "bg-gradient-secondary"
     },
     {
@@ -48,7 +49,7 @@ const Contact = () => {
       title: "Email Support",
       description: "Send us a detailed message and we'll respond quickly",
       action: "Send Email",
-      link: "https://salescentri.com/contact/support-request/submit-ticket",
+      link: "/contact",
       color: "bg-gradient-secondary"
     }
   ];

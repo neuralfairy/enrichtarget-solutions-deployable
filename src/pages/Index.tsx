@@ -3,6 +3,10 @@ import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { Link } from "react-router-dom";
+import heroImage from "@/assets/hero-ai-hunter.jpg";
+import teamImage from "@/assets/team-ai-analytics.jpg";
+import dashboardImage from "@/assets/dashboard-contact-discovery.jpg";
 import { 
   Zap, 
   Target, 
@@ -88,41 +92,50 @@ const Index = () => {
       {/* Hero Section */}
       <section className="pt-24 pb-16 relative overflow-hidden">
         <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center animate-fade-in">
-            <Badge className="mb-6 bg-gradient-primary text-white animate-pulse-glow">
-              <Zap className="h-4 w-4 mr-1" />
-              AI-Powered Contact Discovery
-            </Badge>
-            
-            <h1 className="text-5xl md:text-7xl font-heading font-bold mb-6 text-gradient-primary animate-slide-up">
-              Find Any Contact.
-              <br />
-              <span className="text-gradient-secondary">Instantly.</span>
-            </h1>
-            
-            <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-3xl mx-auto animate-fade-in">
-              Transform your B2B sales with AI Hunter's verified contact discovery 
-              and intelligent lead enrichment. Find decision-makers, verify emails, 
-              and boost conversions.
-            </p>
-            
-            <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12 animate-scale-in">
-              <Button size="lg" className="bg-gradient-primary hover:opacity-90 shadow-primary hover-lift" asChild>
-                <a href="https://salescentri.com/get-started/free-trial">
-                  <Play className="mr-2 h-5 w-5" />
-                  Start Free Trial
-                </a>
-              </Button>
-              <Button size="lg" variant="outline" className="border-primary/20 hover:bg-primary/10" asChild>
-                <a href="https://salescentri.com/solutions/use-case-navigator/demo">
-                  Watch Demo
-                  <ArrowRight className="ml-2 h-5 w-5" />
-                </a>
-              </Button>
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <div className="animate-fade-in">
+              <Badge className="mb-6 bg-gradient-primary text-white animate-pulse-glow">
+                <Zap className="h-4 w-4 mr-1" />
+                AI-Powered Contact Discovery
+              </Badge>
+              
+              <h1 className="text-5xl md:text-7xl font-heading font-bold mb-6 text-gradient-primary animate-slide-up">
+                Find Any Contact.
+                <br />
+                <span className="text-gradient-secondary">Instantly.</span>
+              </h1>
+              
+              <p className="text-xl md:text-2xl text-muted-foreground mb-8 animate-fade-in">
+                Transform your B2B sales with AI Hunter's verified contact discovery 
+                and intelligent lead enrichment. Find decision-makers, verify emails, 
+                and boost conversions.
+              </p>
+              
+              <div className="flex flex-col sm:flex-row gap-4 justify-start mb-8 animate-scale-in">
+                <Button size="lg" className="bg-gradient-primary hover:opacity-90 shadow-primary hover-lift" asChild>
+                  <Link to="/contact">
+                    <Play className="mr-2 h-5 w-5" />
+                    Start Free Trial
+                  </Link>
+                </Button>
+                <Button size="lg" variant="outline" className="border-primary/20 hover:bg-primary/10" asChild>
+                  <Link to="/contact">
+                    Watch Demo
+                    <ArrowRight className="ml-2 h-5 w-5" />
+                  </Link>
+                </Button>
+              </div>
+              
+              <div className="text-sm text-muted-foreground">
+                ✓ 14-day free trial • ✓ No credit card required • ✓ Setup in 60 seconds
+              </div>
             </div>
-            
-            <div className="text-sm text-muted-foreground">
-              ✓ 14-day free trial • ✓ No credit card required • ✓ Setup in 60 seconds
+            <div className="animate-scale-in">
+              <img 
+                src={heroImage} 
+                alt="AI Hunter Dashboard - Contact Discovery Interface" 
+                className="rounded-lg shadow-2xl border border-border w-full"
+              />
             </div>
           </div>
         </div>
@@ -207,7 +220,7 @@ const Index = () => {
             </p>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
             {testimonials.map((testimonial, index) => (
               <Card key={index} className="bg-gradient-card border-border hover-lift animate-scale-in shadow-card">
                 <CardContent className="p-6">
@@ -231,6 +244,14 @@ const Index = () => {
                 </CardContent>
               </Card>
             ))}
+          </div>
+          
+          <div className="mb-16">
+            <img 
+              src={teamImage} 
+              alt="Happy customers using AI Hunter for B2B sales" 
+              className="mx-auto rounded-lg shadow-xl border border-border max-w-3xl w-full"
+            />
           </div>
           
           {/* Trust Badges */}
@@ -273,9 +294,9 @@ const Index = () => {
           
           <div className="text-center">
             <Button className="bg-gradient-primary hover:opacity-90" asChild>
-              <a href="https://salescentri.com/solutions/psa-suite/integrations">
+              <Link to="/features">
                 View All Integrations
-              </a>
+              </Link>
             </Button>
           </div>
         </div>
@@ -297,9 +318,9 @@ const Index = () => {
                       Our customers typically see 3x ROI within the first quarter.
                     </p>
                     <Button size="lg" variant="secondary" asChild>
-                      <a href="https://salescentri.com/contact/sales-inquiry/request-quote">
+                      <Link to="/contact">
                         Get ROI Analysis
-                      </a>
+                      </Link>
                     </Button>
                   </div>
                   
@@ -338,14 +359,14 @@ const Index = () => {
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
               <Button size="lg" className="bg-gradient-primary hover:opacity-90 shadow-primary hover-lift" asChild>
-                <a href="https://salescentri.com/get-started/free-trial">
+                <Link to="/contact">
                   Start Free Trial
-                </a>
+                </Link>
               </Button>
               <Button size="lg" variant="outline" asChild>
-                <a href="https://salescentri.com/get-started/book-demo">
+                <Link to="/contact">
                   Book a Demo
-                </a>
+                </Link>
               </Button>
             </div>
             
