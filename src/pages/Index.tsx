@@ -7,6 +7,12 @@ import { Link } from "react-router-dom";
 import heroImage from "@/assets/hero-ai-hunter.jpg";
 import teamImage from "@/assets/team-ai-analytics.jpg";
 import dashboardImage from "@/assets/dashboard-contact-discovery.jpg";
+import aiDashboardImage from "@/assets/ai-dashboard-analytics.jpg";
+import salesTeamImage from "@/assets/sales-team-working.jpg";
+import contactNetworkImage from "@/assets/contact-network-flow.jpg";
+import roiChartImage from "@/assets/roi-growth-chart.jpg";
+import securityImage from "@/assets/security-compliance.jpg";
+import integrationImage from "@/assets/integration-ecosystem.jpg";
 import { 
   Zap, 
   Target, 
@@ -208,6 +214,60 @@ const Index = () => {
         </div>
       </section>
 
+      {/* How It Works Section */}
+      <section className="py-16 bg-gradient-card">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-16 animate-fade-in">
+            <h2 className="text-3xl md:text-5xl font-heading font-bold mb-4">
+              How AI Hunter Works
+            </h2>
+            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+              Simple, powerful, and intelligent contact discovery in three easy steps
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+            <div className="text-center animate-scale-in">
+              <div className="w-20 h-20 bg-gradient-primary rounded-full flex items-center justify-center mx-auto mb-6">
+                <Search className="h-10 w-10 text-white" />
+              </div>
+              <h3 className="text-xl font-semibold mb-4">1. Search & Discover</h3>
+              <p className="text-muted-foreground">
+                Enter company details or prospect criteria. Our AI instantly searches across 50+ million verified contacts.
+              </p>
+            </div>
+            
+            <div className="text-center animate-scale-in" style={{ animationDelay: "0.2s" }}>
+              <div className="w-20 h-20 bg-gradient-secondary rounded-full flex items-center justify-center mx-auto mb-6">
+                <Brain className="h-10 w-10 text-white" />
+              </div>
+              <h3 className="text-xl font-semibold mb-4">2. AI Enrichment</h3>
+              <p className="text-muted-foreground">
+                Advanced AI enriches contact data with verified emails, phone numbers, and comprehensive business intelligence.
+              </p>
+            </div>
+            
+            <div className="text-center animate-scale-in" style={{ animationDelay: "0.4s" }}>
+              <div className="w-20 h-20 bg-gradient-primary rounded-full flex items-center justify-center mx-auto mb-6">
+                <Target className="h-10 w-10 text-white" />
+              </div>
+              <h3 className="text-xl font-semibold mb-4">3. Export & Convert</h3>
+              <p className="text-muted-foreground">
+                Export qualified leads directly to your CRM or outreach tools. Start converting prospects into customers.
+              </p>
+            </div>
+          </div>
+          
+          <div className="text-center">
+            <img 
+              src={contactNetworkImage} 
+              alt="AI Hunter contact discovery workflow visualization" 
+              className="mx-auto rounded-lg shadow-xl border border-border max-w-4xl w-full"
+            />
+          </div>
+        </div>
+      </section>
+
       {/* Social Proof */}
       <section className="py-16">
         <div className="container mx-auto px-4 text-center">
@@ -216,7 +276,7 @@ const Index = () => {
               Trusted by Leading Sales Teams
             </h2>
             <p className="text-xl text-muted-foreground">
-              Join thousands of professionals who trust AI Hunter
+              Join thousands of professionals who trust AI Hunter to accelerate their sales pipeline
             </p>
           </div>
           
@@ -246,12 +306,21 @@ const Index = () => {
             ))}
           </div>
           
-          <div className="mb-16">
-            <img 
-              src={teamImage} 
-              alt="Happy customers using AI Hunter for B2B sales" 
-              className="mx-auto rounded-lg shadow-xl border border-border max-w-3xl w-full"
-            />
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
+            <div className="animate-scale-in">
+              <img 
+                src={salesTeamImage} 
+                alt="Professional sales team using AI Hunter for prospecting" 
+                className="rounded-lg shadow-xl border border-border w-full"
+              />
+            </div>
+            <div className="animate-scale-in">
+              <img 
+                src={aiDashboardImage} 
+                alt="AI Hunter analytics dashboard showing performance metrics" 
+                className="rounded-lg shadow-xl border border-border w-full"
+              />
+            </div>
           </div>
           
           {/* Trust Badges */}
@@ -284,20 +353,39 @@ const Index = () => {
             </p>
           </div>
           
-          <div className="flex flex-wrap justify-center items-center gap-6 mb-12">
-            {integrations.map((integration, index) => (
-              <div key={index} className="px-6 py-3 bg-gradient-card border border-border rounded-lg hover-lift">
-                <span className="font-medium">{integration}</span>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-12">
+            <div className="animate-scale-in">
+              <img 
+                src={integrationImage} 
+                alt="AI Hunter integration ecosystem with popular CRM and sales tools" 
+                className="rounded-lg shadow-xl border border-border w-full"
+              />
+            </div>
+            
+            <div className="space-y-6 animate-fade-in">
+              <h3 className="text-2xl font-heading font-bold">
+                Connect Your Entire Sales Stack
+              </h3>
+              <p className="text-muted-foreground text-lg">
+                AI Hunter integrates seamlessly with 50+ popular sales and marketing tools. 
+                No complex setup required - get started in under 5 minutes.
+              </p>
+              
+              <div className="grid grid-cols-2 gap-4">
+                {integrations.slice(0, 6).map((integration, index) => (
+                  <div key={index} className="flex items-center space-x-3 p-3 bg-gradient-card border border-border rounded-lg hover-lift">
+                    <div className="w-2 h-2 bg-gradient-primary rounded-full"></div>
+                    <span className="font-medium text-sm">{integration}</span>
+                  </div>
+                ))}
               </div>
-            ))}
-          </div>
-          
-          <div className="text-center">
-            <Button className="bg-gradient-primary hover:opacity-90" asChild>
-              <Link to="/features">
-                View All Integrations
-              </Link>
-            </Button>
+              
+              <Button className="bg-gradient-primary hover:opacity-90" asChild>
+                <Link to="/features">
+                  View All Integrations
+                </Link>
+              </Button>
+            </div>
           </div>
         </div>
       </section>
@@ -305,42 +393,105 @@ const Index = () => {
       {/* ROI Section */}
       <section className="py-16">
         <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto">
-            <Card className="bg-gradient-primary text-white overflow-hidden">
-              <CardContent className="p-8 md:p-12">
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
-                  <div>
-                    <h2 className="text-3xl md:text-4xl font-heading font-bold mb-6">
-                      Calculate Your ROI
-                    </h2>
-                    <p className="text-xl opacity-90 mb-8">
-                      See how AI Hunter can impact your sales pipeline and revenue. 
-                      Our customers typically see 3x ROI within the first quarter.
-                    </p>
-                    <Button size="lg" variant="secondary" asChild>
-                      <Link to="/contact">
-                        Get ROI Analysis
-                      </Link>
-                    </Button>
+          <div className="max-w-6xl mx-auto">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+              <div className="animate-scale-in">
+                <img 
+                  src={roiChartImage} 
+                  alt="ROI growth chart showing AI Hunter business impact" 
+                  className="rounded-lg shadow-xl border border-border w-full"
+                />
+              </div>
+              
+              <Card className="bg-gradient-primary text-white overflow-hidden animate-fade-in">
+                <CardContent className="p-8 md:p-12">
+                  <h2 className="text-3xl md:text-4xl font-heading font-bold mb-6">
+                    Proven ROI Impact
+                  </h2>
+                  <p className="text-xl opacity-90 mb-8">
+                    AI Hunter delivers measurable results from day one. Our customers 
+                    achieve significant pipeline growth and revenue acceleration.
+                  </p>
+                  
+                  <div className="grid grid-cols-2 gap-4 mb-8">
+                    <div className="bg-white/10 rounded-lg p-4 text-center">
+                      <div className="text-3xl font-bold">3x</div>
+                      <div className="text-sm opacity-90">ROI in Q1</div>
+                    </div>
+                    <div className="bg-white/10 rounded-lg p-4 text-center">
+                      <div className="text-3xl font-bold">40%</div>
+                      <div className="text-sm opacity-90">More Leads</div>
+                    </div>
+                    <div className="bg-white/10 rounded-lg p-4 text-center">
+                      <div className="text-3xl font-bold">60%</div>
+                      <div className="text-sm opacity-90">Time Saved</div>
+                    </div>
+                    <div className="bg-white/10 rounded-lg p-4 text-center">
+                      <div className="text-3xl font-bold">95%</div>
+                      <div className="text-sm opacity-90">Data Accuracy</div>
+                    </div>
                   </div>
                   
-                  <div className="space-y-6">
-                    <div className="bg-white/10 rounded-lg p-4">
-                      <div className="text-2xl font-bold">40%</div>
-                      <div className="text-sm opacity-90">Increase in qualified leads</div>
-                    </div>
-                    <div className="bg-white/10 rounded-lg p-4">
-                      <div className="text-2xl font-bold">60%</div>
-                      <div className="text-sm opacity-90">Reduction in research time</div>
-                    </div>
-                    <div className="bg-white/10 rounded-lg p-4">
-                      <div className="text-2xl font-bold">300%</div>
-                      <div className="text-sm opacity-90">Average ROI in first quarter</div>
-                    </div>
+                  <Button size="lg" variant="secondary" asChild>
+                    <Link to="/contact">
+                      Calculate Your ROI
+                    </Link>
+                  </Button>
+                </CardContent>
+              </Card>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Security & Compliance */}
+      <section className="py-16 bg-gradient-card">
+        <div className="container mx-auto px-4">
+          <div className="max-w-6xl mx-auto">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+              <div className="animate-fade-in">
+                <h2 className="text-3xl md:text-4xl font-heading font-bold mb-6">
+                  Enterprise-Grade Security
+                </h2>
+                <p className="text-xl text-muted-foreground mb-8">
+                  Your data security is our priority. AI Hunter meets the highest 
+                  industry standards for data protection and compliance.
+                </p>
+                
+                <div className="space-y-4 mb-8">
+                  <div className="flex items-center space-x-3">
+                    <Shield className="h-6 w-6 text-success" />
+                    <span className="font-semibold">SOC 2 Type II Certified</span>
+                  </div>
+                  <div className="flex items-center space-x-3">
+                    <Shield className="h-6 w-6 text-success" />
+                    <span className="font-semibold">GDPR Compliant</span>
+                  </div>
+                  <div className="flex items-center space-x-3">
+                    <Shield className="h-6 w-6 text-success" />
+                    <span className="font-semibold">256-bit SSL Encryption</span>
+                  </div>
+                  <div className="flex items-center space-x-3">
+                    <Award className="h-6 w-6 text-success" />
+                    <span className="font-semibold">99.9% Uptime SLA</span>
                   </div>
                 </div>
-              </CardContent>
-            </Card>
+                
+                <Button className="bg-gradient-primary hover:opacity-90" asChild>
+                  <Link to="/about">
+                    Learn About Security
+                  </Link>
+                </Button>
+              </div>
+              
+              <div className="animate-scale-in">
+                <img 
+                  src={securityImage} 
+                  alt="Enterprise security and compliance certifications" 
+                  className="rounded-lg shadow-xl border border-border w-full"
+                />
+              </div>
+            </div>
           </div>
         </div>
       </section>

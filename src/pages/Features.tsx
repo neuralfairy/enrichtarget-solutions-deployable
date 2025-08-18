@@ -6,6 +6,9 @@ import { Badge } from "@/components/ui/badge";
 import { Link } from "react-router-dom";
 import dashboardImage from "@/assets/dashboard-contact-discovery.jpg";
 import aiNetworkImage from "@/assets/ai-network-brain.jpg";
+import aiDashboardImage from "@/assets/ai-dashboard-analytics.jpg";
+import contactNetworkImage from "@/assets/contact-network-flow.jpg";
+import integrationImage from "@/assets/integration-ecosystem.jpg";
 import { 
   Brain, 
   Search, 
@@ -78,32 +81,54 @@ const Features = () => {
       <Header />
       
       {/* Hero Section */}
-      <section className="pt-24 pb-16">
+      <section className="pt-24 pb-16 relative overflow-hidden">
         <div className="container mx-auto px-4 text-center">
           <div className="animate-fade-in">
-            <Badge className="mb-4 bg-gradient-primary text-white">
-              AI Hunter Features
+            <Badge className="mb-6 bg-gradient-primary text-white animate-pulse-glow">
+              <Zap className="h-4 w-4 mr-1" />
+              Advanced AI Features
             </Badge>
-            <h1 className="text-4xl md:text-6xl font-heading font-bold mb-6 text-gradient-primary">
+            <h1 className="text-4xl md:text-6xl font-heading font-bold mb-6 text-gradient-primary animate-slide-up">
               Supercharge Your Sales
-              <br />with AI Intelligence
+              <br />
+              <span className="text-gradient-secondary">with AI Intelligence</span>
             </h1>
-            <p className="text-xl text-muted-foreground mb-8 max-w-3xl mx-auto">
+            <p className="text-xl text-muted-foreground mb-8 max-w-3xl mx-auto animate-fade-in">
               Discover how AI Hunter transforms your prospecting workflow with cutting-edge 
-              artificial intelligence and verified contact data.
+              artificial intelligence, verified contact data, and enterprise-grade security.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="bg-gradient-primary hover:opacity-90" asChild>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12 animate-scale-in">
+              <Button size="lg" className="bg-gradient-primary hover:opacity-90 shadow-primary hover-lift" asChild>
                 <Link to="/contact">
                   Interactive Demo
                 </Link>
               </Button>
-              <Button size="lg" variant="outline" asChild>
+              <Button size="lg" variant="outline" className="border-primary/20 hover:bg-primary/10" asChild>
                 <Link to="/contact">
                   Start Free Trial
                 </Link>
               </Button>
             </div>
+            
+            <div className="max-w-5xl mx-auto animate-scale-in">
+              <img 
+                src={aiDashboardImage} 
+                alt="AI Hunter Advanced Features Dashboard Interface" 
+                className="rounded-lg shadow-2xl border border-border w-full"
+              />
+            </div>
+          </div>
+        </div>
+        
+        {/* Floating Elements */}
+        <div className="absolute top-20 left-10 animate-float">
+          <div className="p-3 bg-gradient-primary rounded-full shadow-glow">
+            <Brain className="h-6 w-6 text-white" />
+          </div>
+        </div>
+        <div className="absolute top-40 right-10 animate-float" style={{ animationDelay: "2s" }}>
+          <div className="p-3 bg-gradient-secondary rounded-full shadow-glow">
+            <Target className="h-6 w-6 text-white" />
           </div>
         </div>
       </section>
@@ -112,32 +137,42 @@ const Features = () => {
       <section className="py-16">
         <div className="container mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-12 items-center mb-16">
-            <div>
+            <div className="animate-fade-in">
               <h2 className="text-3xl md:text-4xl font-heading font-bold mb-6">
                 Powerful Features for Modern Sales Teams
               </h2>
               <p className="text-xl text-muted-foreground mb-8">
                 Everything you need to find, verify, and engage with your ideal prospects using cutting-edge AI technology.
               </p>
-              <div className="space-y-4">
+              <div className="space-y-4 mb-8">
                 <div className="flex items-center gap-3">
                   <CheckCircle className="h-5 w-5 text-success" />
-                  <span>99.9% uptime guarantee</span>
+                  <span className="font-semibold">99.9% uptime guarantee</span>
                 </div>
                 <div className="flex items-center gap-3">
                   <CheckCircle className="h-5 w-5 text-success" />
-                  <span>Real-time data enrichment</span>
+                  <span className="font-semibold">Real-time data enrichment</span>
                 </div>
                 <div className="flex items-center gap-3">
                   <CheckCircle className="h-5 w-5 text-success" />
-                  <span>Advanced API integrations</span>
+                  <span className="font-semibold">Advanced API integrations</span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <CheckCircle className="h-5 w-5 text-success" />
+                  <span className="font-semibold">50+ million verified contacts</span>
                 </div>
               </div>
+              
+              <Button className="bg-gradient-primary hover:opacity-90" asChild>
+                <Link to="/contact">
+                  Explore All Features
+                </Link>
+              </Button>
             </div>
             <div className="animate-scale-in">
               <img 
                 src={dashboardImage} 
-                alt="AI Hunter Features Dashboard" 
+                alt="AI Hunter Features Dashboard Overview" 
                 className="rounded-lg shadow-2xl border border-border w-full"
               />
             </div>
@@ -145,7 +180,7 @@ const Features = () => {
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {features.map((feature, index) => (
-              <Card key={index} className="bg-gradient-card border-border hover-lift animate-scale-in shadow-card">
+              <Card key={index} className="bg-gradient-card border-border hover-lift animate-scale-in shadow-card" style={{ animationDelay: `${index * 0.1}s` }}>
                 <CardHeader>
                   <div className="flex items-center space-x-3">
                     <div className="p-3 bg-gradient-primary rounded-lg">
@@ -169,6 +204,105 @@ const Features = () => {
                 </CardContent>
               </Card>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Feature Showcase */}
+      <section className="py-16 bg-gradient-card">
+        <div className="container mx-auto px-4">
+          <div className="max-w-6xl mx-auto">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16">
+              <div className="animate-fade-in">
+                <h2 className="text-3xl md:text-4xl font-heading font-bold mb-6">
+                  AI-Powered Contact Discovery
+                </h2>
+                <p className="text-xl text-muted-foreground mb-8">
+                  Our advanced AI algorithms search across 50+ million verified contacts 
+                  to find the exact prospects you need. Get verified emails, phone numbers, 
+                  and comprehensive business intelligence in seconds.
+                </p>
+                
+                <div className="space-y-4 mb-8">
+                  <div className="flex items-center space-x-3">
+                    <div className="w-2 h-2 bg-gradient-primary rounded-full"></div>
+                    <span className="font-semibold">95% data accuracy guarantee</span>
+                  </div>
+                  <div className="flex items-center space-x-3">
+                    <div className="w-2 h-2 bg-gradient-primary rounded-full"></div>
+                    <span className="font-semibold">Real-time email verification</span>
+                  </div>
+                  <div className="flex items-center space-x-3">
+                    <div className="w-2 h-2 bg-gradient-primary rounded-full"></div>
+                    <span className="font-semibold">Comprehensive contact profiles</span>
+                  </div>
+                  <div className="flex items-center space-x-3">
+                    <div className="w-2 h-2 bg-gradient-primary rounded-full"></div>
+                    <span className="font-semibold">Multi-source data aggregation</span>
+                  </div>
+                </div>
+                
+                <Button className="bg-gradient-primary hover:opacity-90" asChild>
+                  <Link to="/contact">
+                    Try Contact Discovery
+                  </Link>
+                </Button>
+              </div>
+              
+              <div className="animate-scale-in">
+                <img 
+                  src={contactNetworkImage} 
+                  alt="AI Hunter contact discovery network visualization" 
+                  className="rounded-lg shadow-xl border border-border w-full"
+                />
+              </div>
+            </div>
+            
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+              <div className="animate-scale-in order-2 lg:order-1">
+                <img 
+                  src={integrationImage} 
+                  alt="AI Hunter CRM and sales tool integrations ecosystem" 
+                  className="rounded-lg shadow-xl border border-border w-full"
+                />
+              </div>
+              
+              <div className="animate-fade-in order-1 lg:order-2">
+                <h2 className="text-3xl md:text-4xl font-heading font-bold mb-6">
+                  Seamless CRM Integration
+                </h2>
+                <p className="text-xl text-muted-foreground mb-8">
+                  Connect AI Hunter with your existing sales stack in minutes. 
+                  Export qualified leads directly to Salesforce, HubSpot, Pipedrive, 
+                  and 50+ other popular sales and marketing tools.
+                </p>
+                
+                <div className="space-y-4 mb-8">
+                  <div className="flex items-center space-x-3">
+                    <div className="w-2 h-2 bg-gradient-secondary rounded-full"></div>
+                    <span className="font-semibold">One-click CRM export</span>
+                  </div>
+                  <div className="flex items-center space-x-3">
+                    <div className="w-2 h-2 bg-gradient-secondary rounded-full"></div>
+                    <span className="font-semibold">Bulk data synchronization</span>
+                  </div>
+                  <div className="flex items-center space-x-3">
+                    <div className="w-2 h-2 bg-gradient-secondary rounded-full"></div>
+                    <span className="font-semibold">Custom field mapping</span>
+                  </div>
+                  <div className="flex items-center space-x-3">
+                    <div className="w-2 h-2 bg-gradient-secondary rounded-full"></div>
+                    <span className="font-semibold">Real-time synchronization</span>
+                  </div>
+                </div>
+                
+                <Button className="bg-gradient-secondary hover:opacity-90" asChild>
+                  <Link to="/contact">
+                    View Integrations
+                  </Link>
+                </Button>
+              </div>
+            </div>
           </div>
         </div>
       </section>
